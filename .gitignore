@@ -1,6 +1,6 @@
-/images/
 _pycache__/
 venv/
 *.pyc
 *.pyo
 *.pyd
+/images/
