@@ -9,7 +9,7 @@ if __name__ == '__main__':
 app = Flask(__name__)
 
 @app.route('/roll')
-def roll():
+def dice_roll():
     result = random.randint(1, 20)
     return f'Rolled a 20-sided die: {result}'
 
@@ -26,6 +26,3 @@ def roll_disadvantage():
     result2 = random.randint(1, 20)
     lesser_result = min(result1, result2)
     return f'Rolled two 20-sided dice with disadvantage: {result1}, {result2}. Lesser result: {lesser_result}'
-
-if __name__ == '_main_':
-    app.run(debug=True, port=8081)
