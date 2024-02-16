@@ -1,17 +1,15 @@
 from flask import Flask
-
-app = Flask(__name__)
-
-if __name__ == '__main__':
-    app.run(debug=True, port=8081)
-    
-from flask import Flask
 import random
 
 app = Flask(__name__)
 
+if __name__ == '__main__':
+    app.run(host='localhost', port=8081)
+
+app = Flask(__name__)
+
 @app.route('/roll')
-def roll():
+def dice_roll():
     result = random.randint(1, 20)
     details = random.choice([
         "You swing your sword with precision, landing a solid hit!",
@@ -41,7 +39,7 @@ def roll_disadvantage():
         "Your blow is deflected by the opponent's shield.",
         "In a surprising turn of events, your weapon slips from your grasp, leaving you momentarily vulnerable.",
         "The enemy counterattacks with swift ferocity, catching you off guard."
-    ])
+        ])
     return f"Result for /roll.disadvantage: Rolled {result1} and {result2}. Lesser result: {lesser_result}. Combat details: {details}"
 
 if __name__ == '__main__':

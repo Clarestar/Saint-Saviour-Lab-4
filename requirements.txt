@@ -1,5 +1,3 @@
 flask
 flask-wtf
 flask-bootstrap
-
-Flask==2.0.1
